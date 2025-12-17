@@ -10,17 +10,26 @@ namespace WebAppRazorPagesPreJoinerbatch2.Pages
         public Employee _Emp { get; set; }
 
         AppDatabase obj;
-        public AddEmployeeModel() {
+        public AddEmployeeModel()
+        {
             obj = new AppDatabase();
         }
         public void OnGet()
         {
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
             obj.employee.Add(_Emp);  // insert is done
-            obj.SaveChanges();
+            int res = obj.SaveChanges();  // 1 0
+            if (res > 0)
+            {
+                return RedirectToPage("DisplayEmployees");
+            }
+            else
+            {
+                return Page();
+            }
             // _Emp we haev data here
             // Insert
         }

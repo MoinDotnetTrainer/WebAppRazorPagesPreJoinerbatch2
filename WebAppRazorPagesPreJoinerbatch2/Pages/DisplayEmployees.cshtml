@@ -1,0 +1,103 @@
+﻿@page
+@model WebAppRazorPagesPreJoinerbatch2.Pages.DisplayEmployeesModel
+@{
+
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        padding: 30px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Table Container */
+    .table-container {
+        overflow-x: auto;
+    }
+
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Table Header */
+    thead {
+        background-color: #007bff;
+        color: white;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    /* Table Rows */
+    tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hover Effect */
+        tbody tr:hover {
+            background-color: #e9f3ff;
+            cursor: pointer;
+        }
+
+    /* Status Colors */
+    .active {
+        color: green;
+        font-weight: bold;
+    }
+
+    .inactive {
+        color: red;
+        font-weight: bold;
+    }
+
+    /* Responsive */
+
+</style>
+<h2>Student Details</h2>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Eid</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.emp)
+            {
+                <tr>
+                    <td>@item.Eid</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email </td>
+                    <td>@item.Password</td>
+                    <td>
+                        <a href="EditEmp?Eid=@item.Eid">Edit</a>|
+                        <a href="DeleteEmp?Eid=@item.Eid">Delete</a>|
+                        <a href="EmpDetails">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

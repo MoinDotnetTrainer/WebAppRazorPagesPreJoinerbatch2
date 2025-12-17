@@ -1,0 +1,73 @@
+﻿@page
+@model WebAppRazorPagesPreJoinerbatch2.Pages.DeleteEmpModel
+@{
+}
+
+
+<h2 class="title">Delete Employee</h2>
+
+<div class="delete-box">
+    <p>Are you sure you want to delete this record?</p>
+
+    <table>
+        <tr>
+            <td><strong>Name:</strong></td>
+             <td>@Model._emp.Name</td> 
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td>@Model._emp.Email</td>
+        </tr>
+      
+    </table>
+
+    <form method="post">
+        <button type="submit" class="btn-delete">Delete</button>
+        <a asp-page="/DisplayEmployees" class="btn-cancel">Cancel</a>
+    </form>
+</div>
+
+<style>
+    .title {
+        text-align: center;
+        color: #d9534f;
+    }
+
+    .delete-box {
+        width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background: #fff3f3;
+    }
+
+    table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    td {
+        padding: 8px;
+    }
+
+    .btn-delete {
+        background-color: #d9534f;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-cancel {
+        margin-left: 10px;
+        text-decoration: none;
+        padding: 8px 15px;
+        background: #6c757d;
+        color: white;
+    }
+
+    .btn-delete:hover {
+        background-color: #c9302c;
+    }
+</style>
