@@ -1,0 +1,28 @@
+﻿@page
+@model WebAppRazorPagesPreJoinerbatch2.Pages.UserDataModel
+@{
+}
+<form method="post">
+    <table>
+        <tr>
+            <th>Enter UserName:</th>
+            <td><input type="text" name="name" id="name" /></td>
+        </tr>
+
+        <tr>
+            <th>Enter Email:</th>
+            <td><input type="text" name="email" id="email" /></td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" name="submit" value="submit" />
+            </td>
+
+            <td>
+                U Have Entered ur Name as : @TempData["name"] and email as @TempData["email"]
+            </td>
+        </tr>
+
+    </table>
+</form>
